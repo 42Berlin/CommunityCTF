@@ -24,10 +24,12 @@ int main() {
 	bzero(var.tab, 4242);
 
 	puts("Hello! Please enter your name:");
-	my_gets(var.tab);
+	fflush(stdout);
+	gets(var.tab);
+	puts("Your name is:");
+	puts(var.tab);
+
 	if (var.key == 42) {
 		show_secret_password();
 	}
-	puts("Your name is:");
-	puts(var.tab);
 }
