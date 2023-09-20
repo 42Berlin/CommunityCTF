@@ -89,45 +89,15 @@ void resolve() {
 
 	stat(FILE, &file_stat);
 
-	// struct timespec *p = &file_stat.st_atimespec;
-
-	// char *mem = (char *)p;
-
-	// for (int i = 0; i < 8 * 4; i++) {
-	// 	if (i % 16 == 0) {
-	// 		printf("\n%p: ", &mem[i]);
-	// 	} else if (i % 4 == 0) {
-	// 		printf(" ");
-	// 	}
-	// 	if (isprint(mem[i])) {
-	// 		printf("%c", mem[i]);
-	// 	} else {
-	// 		printf("\033[2;3;90m.\033[0m");
-	// 	}
-	// }
-	// printf("\n%d", file_stat.st_size);
-	// for (int i = 0; i < 8 * 4; i++) {
-	// 	if (i % 16 == 0) {
-	// 		printf("\n%p: ", &mem[i]);
-	// 	} else if (i % 4 == 0) {
-	// 		printf(" ");
-	// 	}
-	// 	if (isprint(mem[i])) {
-	// 		printf("%c", mem[i] + file_stat.st_size);
-	// 	} else {
-	// 		printf("\033[2;3;90m.\033[0m");
-	// 	}
-	// }
-
 	char t1[5], t2[5], t3[5], t4[5];
 	bzero(t1, 5);
 	bzero(t2, 5);
 	bzero(t3, 5);
 	bzero(t4, 5);
 
-	int_into_str(file_stat.st_atimespec.tv_sec, t1, file_stat.st_size);
+	int_into_str(file_stat.st_atimespec.tv_sec,  t1, file_stat.st_size);
 	int_into_str(file_stat.st_atimespec.tv_nsec, t2, file_stat.st_size);
-	int_into_str(file_stat.st_mtimespec.tv_sec, t3, file_stat.st_size);
+	int_into_str(file_stat.st_mtimespec.tv_sec,  t3, file_stat.st_size);
 	int_into_str(file_stat.st_mtimespec.tv_nsec, t4, file_stat.st_size);
 
 	char truc[17];

@@ -14,12 +14,7 @@ typedef struct test {
 } test;
 
 void show_secret_password() {
-	printf("fla");
-	printf("g{m");
-	printf("y_n");
-	printf("4m3");
-	printf("_1s");
-	printf("}");
+	printf("flag{H0w_did_U_do?}");
 }
 
 int main() {
@@ -34,5 +29,5 @@ int main() {
 		show_secret_password();
 	}
 	puts("Your name is:");
-	printf("%s", var.tab);
+	puts(var.tab);
 }
