@@ -1,5 +1,5 @@
 #!/bin/sh
-echo 'Welcome to my server, Check out the secret command'
+echo "Welcome to the Wizards of Time server.\nFirst rule: Don't talk about the Wizards of Time.\nSecond rule: You already know..."
 
 unset HOSTNAME
 unset HOME

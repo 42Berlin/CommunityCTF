@@ -23,10 +23,7 @@ int main(int argc, char **argv) {
 		create();
 	} else if (strcmp("check", argv[1]) == 0) {
 		resolve();
-	} else if (strcmp("both", argv[1]) == 0) { // a rm
-		create();
-		resolve();
-	} else {
+	}else {
 		printf("argv != reset or check");
 	}
 }
