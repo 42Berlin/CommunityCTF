@@ -3,7 +3,7 @@ import subprocess
 
 server = APIRouter()
 
-not_allowed = '()$[];/|<>{}\'"!\\~`&'
+not_allowed = '()$[];/|<>{}\'"!\\~`&*'
 
 @server.get('/{arg}')
 def get_arg(req: Request, arg: str):
