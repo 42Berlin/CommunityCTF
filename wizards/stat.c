@@ -87,7 +87,12 @@ void resolve() {
 	struct stat file_stat;
 	char flag[] = "flag{Cr*Vit3}";
 
-	stat(FILE, &file_stat);
+	int ret = stat(FILE, &file_stat);
+
+	if (ret) {
+		printf("The flag is not available anymore. Reset.\n");
+		exit(0);
+	}
 
 	int key = file_stat.st_size;
 

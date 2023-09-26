@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN apt-get update -y && apt-get install -y xinetd gcc python3
+RUN apt-get update -y && apt-get install -y xinetd gcc cron
 
 RUN useradd -m ctf
 
@@ -16,29 +16,22 @@ RUN mkdir /home/ctf/dev && \
     mknod /home/ctf/dev/urandom c 1 9 && \
     chmod 666 /home/ctf/dev/*
 
-RUN mkdir /home/ctf/bin && \
-    cp /bin/sh /home/ctf/bin && \
-    cp /bin/ls /home/ctf/bin && \
-    cp /bin/cat /home/ctf/bin
-
 COPY stat.c /tmp/stat.c
 
 RUN mkdir -p /home/ctf/bin/
 RUN mkdir -p /home/ctf/usr/bin/
 RUN mkdir -p /home/ctf/usr/lib/
 RUN mkdir -p /home/ctf/usr/include/
-RUN mkdir -p /home/ctf/execute
+RUN mkdir -p /home/ctf/home
+
 RUN cp -r /bin/* /home/ctf/bin/
 RUN cp -r /usr/bin/* /home/ctf/usr/bin/
 RUN cp -r /usr/lib/* /home/ctf/usr/lib/
 RUN cp -r /usr/include/* /home/ctf/usr/include/
-RUN chmod 777 /home/ctf/execute
 
 RUN gcc /tmp/stat.c -o /home/ctf/bin/secret && rm /tmp/stat.c
 
 RUN chmod o-r,g-r /home/ctf/bin/secret
-
-RUN /home/ctf/bin/secret reset
 
 COPY ./xinetd.conf /etc/xinetd.d/ctf
 COPY ./start.sh /start.sh
