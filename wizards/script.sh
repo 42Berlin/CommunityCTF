@@ -31,6 +31,6 @@ PATH=/bin:/usr/bin:/home/$USER
 SHLVL=-1
 
 /usr/sbin/chroot --userspec=$(id -u $USER):$(id -g $USER) \
-	/home/ctf /bin/bash -c "cd /home/$USER && secret reset && bash -ri" \
+	/home/ctf /bin/bash -c "cd /home/$USER && chmod 700 . && secret reset && bash -ri" \
 	&& /usr/sbin/deluser --remove-all-files $USER >/dev/null 2>&1 \
 	&& echo 'User removed'
