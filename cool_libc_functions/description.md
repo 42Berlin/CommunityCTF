@@ -35,4 +35,4 @@ he told me that you can connect with netcat to it.
 
 Flag format: `flag{flag_value}`
 
-Creator: nathan
+Creator: Nathan_42Berlin

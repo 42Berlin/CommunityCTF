@@ -7,4 +7,4 @@ Here's the IP: [IP]
 
 Flag format: `flag{flag_value}` <br />
 
-Creator: nathan
+Creator: Nathan_42Berlin
